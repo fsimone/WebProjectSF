@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: fsimone
+Build-Jdk: 13.0.1
+Implementation-Title: WebProjectSpringFrameWork
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: WebProjectSpringFrameWork
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/WebProjectSpringFrameWork
+Created-By: Maven Integration for Eclipse
+
