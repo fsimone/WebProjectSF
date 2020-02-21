@@ -45,9 +45,9 @@ public class Main extends SpringBootServletInitializer {
         return new ApplicationConfig().setApplicationContext(context);
     }
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		  SpringApplication.run(Main.class, args);
-	}
+	}*/
 
 
 }

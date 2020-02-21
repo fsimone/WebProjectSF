@@ -30,7 +30,7 @@
         	<artifactId>spring-boot-starter-web</artifactId> 
     	</dependency>
 		
-		<dependency> <!-- exclude logback , add log4j2 -->
+		<dependency> <!-- exclude spring logback to add log4j2 like LOG MANAGER -->
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter</artifactId>
 		    <exclusions>
