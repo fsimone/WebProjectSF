@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>www.francescosimone.net</title>
-<link href="<c:url value="/resources/css/bootstrap.min.css" />"
+<title>Test Spring JSP</title>
+<link href="<c:url value="webjars/bootstrap/3.3.7/js/bootstrap.min.css" />"
  rel="stylesheet">
-<script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
-<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<script src="<c:url value="webjars/jquery/1.9.1/jquery.min.js" />"></script>
+<script src="<c:url value="webjars/bootstrap/3.3.7/js/bootstrap.min.js" />"></script>
 </head>
 <body>
  <div class="container">
   <div class="col-md-offset-1 col-md-10">
-   <h2>TEST - Spring Boot 5 - Hibernate 5 - Postgres 5 Connection</h2>
+   <h2>TEST INTEGRATION Spring Boot 2.2 - Hibernate 5 - Postgres 12</h2>
    <hr />
 
    <input type="button" value="Add Test"

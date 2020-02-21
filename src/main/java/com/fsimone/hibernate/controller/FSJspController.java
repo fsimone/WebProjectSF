@@ -47,7 +47,9 @@ public class FSJspController {
     }
 
 
-
+    /*
+     * http://localhost:8080/WebProjectSpringFrameWork/welcome
+     */
 	@RequestMapping("/welcome")
 	public String welcome(Map<String, Object> model) {
 		model.put("message", this.message);
