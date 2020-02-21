@@ -31,10 +31,13 @@ public class FSJspController {
     @Autowired
     private TestEntityService testEntityService;
 
+    // inject via application.properties
+    @Value("${welcome.message:test}")
+    private String message = "This is a test message";
 
 
     /*
-     * http://localhost:8081/WebProjectSpringFrameWork/test
+     * http://localhost:8080/WebProjectSpringFrameWork/test
      */
     @GetMapping("/test")
     public String test(Model model) {
@@ -44,21 +47,19 @@ public class FSJspController {
     }
 
 
-	// inject via application.properties
-	@Value("${welcome.message:test}")
-	private String message = "This is a test message";
 
 	@RequestMapping("/welcome")
 	public String welcome(Map<String, Object> model) {
 		model.put("message", this.message);
 		return "welcome";
 	}
+	
+	
 /*
 	@RequestMapping(value = "/addLog", method = RequestMethod.GET)
 	public ModelAndView addLog( @ModelAttribute("log") Log log) {
 		return new ModelAndView( "logAdd" );
 	}
-*/
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView viewLogs() {
 		Map<String, List<?>> model = new HashMap<String, List<?>>();
@@ -66,5 +67,6 @@ public class FSJspController {
 
 		return new ModelAndView( "userView", model );
 	}
+ */
 
 }

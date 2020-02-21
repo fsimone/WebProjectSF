@@ -1,3 +1,6 @@
+RUN AS SPRING-BOOT
+mvn spring-boot:run
+
 
 
 	    <dependency>

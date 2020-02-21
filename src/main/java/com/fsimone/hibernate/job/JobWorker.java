@@ -52,9 +52,9 @@ public class JobWorker implements Job
 */
 
 			scheduler.shutdown();
-			System.out.println("quartz Job STOP !!!");
+			LOG.debug("quartz Job STOP !!!");
 		} catch (Exception e) {
-			System.out.println("ERROR: "+e.getMessage());
+			LOG.error("ERROR: "+e.getMessage());
 			e.printStackTrace();
 		}
 

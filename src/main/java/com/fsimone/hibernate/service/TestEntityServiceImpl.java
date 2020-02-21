@@ -28,8 +28,8 @@ public class TestEntityServiceImpl implements TestEntityService {
 
 	@Override
 	@Transactional
-	public void saveTestEntity(TestEntity theCustomer) {
-		testEntityDAO.saveTestEntity(theCustomer);
+	public void saveTestEntity(TestEntity theValue) {
+		testEntityDAO.saveTestEntity(theValue);
 	}
 
 	@Override

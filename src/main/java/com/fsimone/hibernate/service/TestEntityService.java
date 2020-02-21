@@ -8,7 +8,7 @@ public interface TestEntityService {
 
     public List <TestEntity> getTestEntityList();
 
-    public void saveTestEntity(TestEntity theCustomer);
+    public void saveTestEntity(TestEntity theValue);
 
     public TestEntity getTestEntity(int theId);
 
