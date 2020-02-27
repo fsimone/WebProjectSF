@@ -34,6 +34,7 @@ public class Main extends SpringBootServletInitializer {
 		try {
 		  ApplicationContext c = new ClassPathXmlApplicationContext("hibernate5Configuration.xml");
 	      context = c;
+	      context.getBean(org.springframework.orm.hibernate5.HibernateTransactionManager.class);
 		} catch (Exception e) {
 	    	e.printStackTrace();
 		}

@@ -1,5 +1,4 @@
 target/
-WebContent/
 bin/
 !.mvn/wrapper/maven-wrapper.jar
 

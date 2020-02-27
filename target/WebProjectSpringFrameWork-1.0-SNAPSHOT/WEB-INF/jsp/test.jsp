@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>www.francescosimone.net</title>
+<title>Test Spring JSP</title>
 <link href="<c:url value="webjars/bootstrap/3.3.7/js/bootstrap.min.css" />"
  rel="stylesheet">
 <script src="<c:url value="webjars/jquery/1.9.1/jquery.min.js" />"></script>
