@@ -1,11 +1,16 @@
 package com.fsimone.hibernate.controller;
 
 
-import java.util.ArrayList;
+import java.io.StringWriter;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,13 +77,29 @@ public class FSRestController {
     }
 	
 	@GetMapping(path="/listx", produces = MediaType.APPLICATION_XML_VALUE)
-    public List<Stringx> getLogsx() {
+    public String getLogsx() {
 		LOG.info("return all DB elements");
 		//curl -X GET http://localhost:8080/WebProjectSpringFrameWork/endpoint/listx
-        List<TestEntity> list = testEntityService.getTestEntityList();
-        List<Stringx> collection =  list.stream().filter(o -> o instanceof TestEntity)
-        	    .map(o -> new Stringx(o.getDescription())).collect(Collectors.toList());
-		return collection;
+	    StringWriter returnValue = new StringWriter();
+
+		try {
+			JAXBContext jaxbContext = JAXBContext.newInstance(Stringx.class);
+			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+			List<TestEntity> list = testEntityService.getTestEntityList();
+			Stringx sx = new Stringx();
+			sx.setId(list.get(0).getId());
+			sx.setLog(list.get(0).getDescription());
+			
+			jaxbMarshaller.marshal(sx, returnValue);
+			
+		} catch (JAXBException e) {
+			LOG.error(e.getMessage());
+
+		}
+
+		return returnValue.toString();
     }
 
 

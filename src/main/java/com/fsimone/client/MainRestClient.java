@@ -4,7 +4,9 @@ public class MainRestClient {
 
 	public static void main(String[] args) {
 		RestClient rc = new RestClient();
-		rc.testGET();
+		rc.testSynchGET();
+		rc.testAsynchGET();
+
 	}
 
 }

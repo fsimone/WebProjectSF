@@ -28,7 +28,7 @@ public class JacksonClassDTO {
 	@JsonIgnore
 	public String toString() {
 		StringBuilder  result = new StringBuilder ();
-		result.append("Server LOG: * ");
+		result.append("Server logs * ");
 		for (Iterator<MessageDTO> iterator = listMessage.iterator(); iterator.hasNext();) {
 			MessageDTO messageDTO = (MessageDTO) iterator.next();
 			result.append(messageDTO.getMessage()).append(" - ");

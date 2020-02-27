@@ -10,6 +10,7 @@ com\fsimone\client\dto\JacksonClassDTO.class
 com\fsimone\hibernate\AppInitializer.class
 com\fsimone\hibernate\ApplicationConfig.class
 com\fsimone\hibernate\controller\FSJspController.class
+com\fsimone\client\RestClient$1.class
 com\fsimone\hibernate\service\TestEntityServiceImpl.class
 com\fsimone\client\dto\MessageDTO.class
 com\fsimone\hibernate\entity\TestEntity.class
