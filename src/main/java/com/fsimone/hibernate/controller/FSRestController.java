@@ -48,20 +48,32 @@ public class FSRestController {
 
 
 
+    /*
+     * SpringBoot Path
+     * curl -X GET http://localhost:8080/endpoint/list
+     * 
+     * Spring Path
+     * curl -X GET http://localhost:8080/WebProjectSpringFrameWork/endpoint/list
+     */
 	@GetMapping(path="/list", produces = MediaType.APPLICATION_JSON_VALUE)
     public Collection<String> getLogs() {
 		LOG.info("return all DB elements");
-		//curl -X GET http://localhost:8080/WebProjectSpringFrameWork/endpoint/list
         List<TestEntity> list = testEntityService.getTestEntityList();
         Collection<String> collection =  list.stream().filter(o -> o instanceof TestEntity)
         		.map(o -> (String) o.getDescription()).collect(Collectors.toList());
 		return collection;
     }
 	
+	/*
+     * SpringBoot Path
+     * curl -X GET http://localhost:8080/endpoint/listj
+     * 
+     * Spring Path
+     * curl -X GET http://localhost:8080/WebProjectSpringFrameWork/endpoint/listj
+     */
 	@GetMapping(path="/listj", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getLogsj() {
 		LOG.info("return all DB elements");
-		//curl -X GET http://localhost:8080/WebProjectSpringFrameWork/endpoint/listj
 		ObjectMapper mapper = new ObjectMapper();
 		ArrayNode arrayNode = mapper.createArrayNode();
         List<TestEntity> list = testEntityService.getTestEntityList();
@@ -76,10 +88,16 @@ public class FSRestController {
 		return arrayNode.toString();
     }
 	
+	/*
+     * SpringBoot Path
+     * curl -X GET http://localhost:8080/endpoint/listx
+     * 
+     * Spring Path
+     * curl -X GET http://localhost:8080/WebProjectSpringFrameWork/endpoint/listx
+     */
 	@GetMapping(path="/listx", produces = MediaType.APPLICATION_XML_VALUE)
     public String getLogsx() {
 		LOG.info("return all DB elements");
-		//curl -X GET http://localhost:8080/WebProjectSpringFrameWork/endpoint/listx
 	    StringWriter returnValue = new StringWriter();
 
 		try {
@@ -103,10 +121,10 @@ public class FSRestController {
     }
 
 
+	//curl -X POST --header "Content-Type: application/json" http://localhost:8080/WebProjectSpringFrameWork/endpoint/add --data 'test'
 	@PostMapping(path= "/add", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<String> addLog(@RequestBody String param) {
 		LOG.info("add element to DB");
-		//curl -X POST --header "Content-Type: application/json" http://localhost:8080/WebProjectSpringFrameWork/endpoint/add --data 'test'
 		TestEntity value = new TestEntity();
 		value.setDescription(param);
 		testEntityService.saveTestEntity(value);
@@ -115,10 +133,10 @@ public class FSRestController {
 	}
 
 
+	//curl -X DELETE --header "Content-Type: application/json" http://localhost:8080/WebProjectSpringFrameWork/endpoint/remove/test
 	@DeleteMapping(path= "/remove/{param}", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<String> deleteLog(@PathVariable String param) {
 		LOG.info("remove element from DB");
-		//curl -X DELETE --header "Content-Type: application/json" http://localhost:8080/WebProjectSpringFrameWork/endpoint/remove/test
         List<TestEntity> list = testEntityService.getTestEntityList();
 		for (Iterator<TestEntity> iterator = list.iterator(); iterator.hasNext();) {
 			TestEntity testEntity = (TestEntity) iterator.next();

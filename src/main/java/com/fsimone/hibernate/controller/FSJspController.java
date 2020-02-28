@@ -37,7 +37,9 @@ public class FSJspController {
 
 
     /*
-     * http://localhost:8080/WebProjectSpringFrameWork/test
+     * http://localhost:8080/WebProjectSpringFrameWork/test (spring)
+     * 
+     * http://localhost:8080/test (spring-boot)
      */
     @GetMapping("/test")
     public String test(Model model) {
@@ -48,7 +50,9 @@ public class FSJspController {
 
 
     /*
-     * http://localhost:8080/WebProjectSpringFrameWork/welcome
+     * http://localhost:8080/WebProjectSpringFrameWork/welcome (spring)
+     * 
+     * http://localhost:8080/welcome (spring-boot)
      */
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String welcome(Map<String, Object> model) {
